@@ -101,16 +101,16 @@ function editProduct(item){
         var delete_button = document.createElement('button')
         delete_button.innerText = 'Deletar produto'
         delete_button.addEventListener('click',()=>{
-            deleteProduct(item['product-id'])
+            deleteProduct(item['produto-id'])
         })
     div.appendChild(delete_button)
     modal_content.appendChild(div)
 
-    var name = document.querySelector('#name').value
-    var colour = document.querySelector('#colour').value
-    var value = document.querySelector('#value').value
     var edit = document.querySelector('#edit')
     edit.addEventListener('click', ()=>{
+        var name = document.querySelector('#name').value
+        var colour = document.querySelector('#colour').value
+        var value = document.querySelector('#value').value
         putProduct(name, colour, value, item['produto-id'])
     })
     
