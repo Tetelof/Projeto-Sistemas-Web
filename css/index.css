@@ -1,0 +1,196 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+Header {
+    overflow: auto;
+    background-color: black;
+    top: -20px;
+    margin-left: -10px;
+    padding: 20px 10px;
+    position: relative;
+}
+
+Header a {
+    float: left;
+    color: white;
+    text-align: center;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 25px;
+    border-radius: 4px;
+}
+
+Header a.logo {
+    font-size: 40px;
+    font-weight: bold;
+}
+
+Header a:hover,
+Header a:focus {
+    background-color: rgba(255, 255, 255, 0.5);
+    color: white;
+    text-align: left;
+
+}
+
+.header-right {
+    float: right;
+    color: white;
+    text-align: center;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 25px;
+    border-radius: 4px;
+}
+
+Nav {
+    background-color: rgb(224, 224, 224);
+    height: 100%;
+    width: 200px;
+    float: left;
+    overflow: auto;
+    background-position: center;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+li a {
+    display: block;
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+li a:hover,
+li a:focus {
+    background-color: black;
+    color: white;
+}
+
+H1 {
+    font-size: 25px;
+}
+
+H2 {
+    padding: 0px 8px;
+    font-size: 20px;
+}
+
+H1 a {
+    text-decoration: none;
+    font-size: 20px;
+    display: block;
+    color: #000;
+    overflow: auto;
+    width: 100%;
+    padding: 8px 8px;
+
+}
+
+H1 a:hover,
+H1 a:focus {
+    background-color: black;
+    color: white;
+}
+
+Content {
+    float: left;
+    padding: 20px;
+}
+
+Footer {
+    position: fixed;
+    bottom: 0;
+    text-align: center;
+    padding: 3px;
+    background-color: rgb(200, 200, 200);
+    color: black;
+
+}
+
+Footer a {
+    text-decoration: none;
+    color: black;
+}
+
+Footer a:hover,
+Footer a:focus {
+    color: white;
+    background-color: black;
+}
+
+Section {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+}
+
+.product-list {
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr 2fr 2fr;
+    align-content: stretch;
+    justify-content: space-between;
+    justify-items: stretch;
+    align-items: stretch;
+    grid-gap: 10px;
+}
+
+.product {
+    display: grid;
+    grid-template-columns: 1fr;
+    border: none;
+    box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+
+}
+
+.product-name {
+    text-align: center;
+    text-overflow: ellipsis;
+    font-weight: bold;
+    font-size: 20px;
+    white-space: nowrap;
+}
+
+.product-value {
+    text-align: start;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.product-id {
+    display: none;
+}
+
+.modal {
+    z-index: 3;
+    display: none;
+    padding-top: 100px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4)
+}
+
+.modal-content {
+    margin: auto;
+    background-color: #fff;
+    position: relative;
+    padding: 20px;
+    outline: 0;
+    width: 600px;
+    box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2), 0 4px 20px 0 rgba(0, 0, 0, 0.19)
+}
+
