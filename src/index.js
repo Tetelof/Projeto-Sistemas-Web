@@ -10,10 +10,7 @@ show_modal.addEventListener('click', (event) => {
 })
 window.onclick = function (event) {
     if (event.target == modal) {
-        modal.style.display = "none";
-        while(modal_content.children > 0){
-            modal_content.removeChild(modal_content.lastChild)
-        }
+       closeModal()
     }
 }
 
@@ -77,7 +74,7 @@ function addProduct(){
             document.querySelector('#colour').value,
             document.querySelector('#value').value
         )
-        modal.style.display = 'none'
+        closeModal()
     })
 }
 
@@ -105,7 +102,7 @@ function editProduct(item){
     delete_button.innerText = 'Deletar produto'
     delete_button.addEventListener('click',()=>{
         deleteProduct(item['produto-id'])
-        modal.style.display = 'none'
+        closeModal()
     })
 
     div.appendChild(delete_button)
@@ -117,7 +114,7 @@ function editProduct(item){
         var colour = document.querySelector('#colour').value
         var value = document.querySelector('#value').value
         putProduct(name, colour, value, item['produto-id'])
-        modal.style.display = 'none'
+        closeModal()
     })
     
 }
@@ -179,4 +176,11 @@ function deleteProduct(product_id){
     })
     .then(res => res.json())
     .then(() => {getProducts()});
+}
+
+function closeModal(){
+    modal.style.display = "none";
+    if(modal_content.children.length > 0){
+        modal_content.removeChild(modal_content.children[0])
+    }
 }
