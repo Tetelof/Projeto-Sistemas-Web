@@ -11,7 +11,9 @@ show_modal.addEventListener('click', (event) => {
 window.onclick = function (event) {
     if (event.target == modal) {
         modal.style.display = "none";
-        modal_content.removeChild(modal_content.lastChild)
+        while(modal_content.children > 0){
+            modal_content.removeChild(modal_content.lastChild)
+        }
     }
 }
 
@@ -81,8 +83,8 @@ function addProduct(){
 
 function editProduct(item){
     var div = document.createElement('div')
-    div.innerHTML =
-        `<h1 id="title">Editar ${item.nome}</h1>
+    div.innerHTML =`
+        <h1 id="title">Editar ${item.nome}</h1>
 
         <label for="name">Nome:</label><br>
         <input type="text" id="name" name="name" placeholder="Nome do produto" value="${item.nome}">
@@ -96,13 +98,16 @@ function editProduct(item){
         <input type="text" id="value" name="value" placeholder="R$199,99" value="${item.valor}">
         <br><br>
 
-        <button id="edit">Editar</button>`
+        <button id="edit">Editar</button>
+    `
         
-        var delete_button = document.createElement('button')
-        delete_button.innerText = 'Deletar produto'
-        delete_button.addEventListener('click',()=>{
-            deleteProduct(item['produto-id'])
-        })
+    var delete_button = document.createElement('button')
+    delete_button.innerText = 'Deletar produto'
+    delete_button.addEventListener('click',()=>{
+        deleteProduct(item['produto-id'])
+        modal.style.display = 'none'
+    })
+
     div.appendChild(delete_button)
     modal_content.appendChild(div)
 
@@ -112,6 +117,7 @@ function editProduct(item){
         var colour = document.querySelector('#colour').value
         var value = document.querySelector('#value').value
         putProduct(name, colour, value, item['produto-id'])
+        modal.style.display = 'none'
     })
     
 }
